@@ -55,3 +55,37 @@
     </div>
 </body>
 </html>
+
+    <!-- Header -->
+    <div data-role="header">
+        <h1>Missionary Trip Projection Application</h1>
+    </div>
+    <!-- Content -->
+    <div data-role="content">
+        <label for="people">Number of People:</label>
+        <input type="range" id="people" name="people" min="1" max="20">
+        <label for="days">Days of Trip:</label>
+        <input type="number" id="days" name="days" min="1" max="10">
+        <label for="location">Location of Trip:</label>
+        <input type="text" id="location" name="location">
+        <button id="display">Display</button>
+        <table id="report" style="display: none;">
+            <tr>
+                <th>Number of Days</th>
+                <th>Number of Missionaries</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td id="reportDays"></td>
+                <td id="reportPeople"></td>
+                <td id="reportLocation"></td>
+            </tr>
+        </table>
+    </div>
+    <!-- Footer -->
+    <div data-role="footer">
+        <h4>Footer Text</h4>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
