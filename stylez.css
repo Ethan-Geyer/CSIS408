@@ -1,0 +1,21 @@
+/* Set the background color to light gray */
+body {
+    background-color: lightgray;
+}
+
+/* Style the text with navy blue color and use Times New Roman font */
+p, h1, h2, h3, h4, h5, h6 {
+    color: navy;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Style buttons (you can adjust padding, border, etc.) */
+button {
+    background-color: navy;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
