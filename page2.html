@@ -61,6 +61,50 @@
             </tr>
         </table>
     </div>
+<------- content 2-----> 
+
+    
+<h2>Trip Projection Page</h2>
+
+<form id="tripForm">
+  Number of people: <input type="number" id="people" min="1" max="20" required><br>
+  Days of trip: <input type="number" id="days" min="1" max="10" required><br>
+  Location: 
+  <input type="radio" id="location1" name="location" value="100" required> Location 1
+  <input type="radio" id="location2" name="location" value="200" required> Location 2
+  <input type="radio" id="location3" name="location" value="300" required> Location 3<br>
+  <input type="submit" value="Calculate">
+</form>
+
+<h2>Results</h2>
+<table id="results"></table>
+
+<script>
+document.getElementById('tripForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  var people = document.getElementById('people').value;
+  var days = document.getElementById('days').value;
+  var location = document.querySelector('input[name="location"]:checked').value;
+  
+  var cost = calculateCost(location, people, days);
+  
+  var resultsTable = document.getElementById('results');
+  resultsTable.innerHTML = '<tr><td>People:</td><td>' + people + '</td></tr>'
+    + '<tr><td>Days:</td><td>' + days + '</td></tr>'
+    + '<tr><td>Location cost:</td><td>$' + location + '</td></tr>'
+    + '<tr><td>Total cost:</td><td>$' + cost + '</td></tr>';
+  
+  if (cost > 5000) {
+    var deposit = cost * 0.1;  // 10% deposit
+    resultsTable.innerHTML += '<tr><td>Deposit:</td><td>$' + deposit + '</td></tr>'
+      + '<tr><td>Note:</td><td>A deposit must be made within two weeks.</td></tr>';
+  }
+});
+
+function calculateCost(locationCost, numberOfPeople, days) {
+  return locationCost * numberOfPeople * days;
+}
     <!-- Footer -->
     <div data-role="footer">
         <h4>Missionary Trip Projection Application</h4>
